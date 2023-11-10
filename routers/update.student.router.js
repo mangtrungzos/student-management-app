@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../server/controllers/db');
+const db = require('../server/controllers/connectdb');
 
 router.post('/:MASV', (req, res) => {
     const masv = req.params.MASV;

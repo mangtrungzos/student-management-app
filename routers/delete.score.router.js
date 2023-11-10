@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../server/controllers/db');
+const db = require('../server/controllers/connectdb');
 
 router.delete('/:MASV', (req, res) => {
     const query = 'DELETE FROM diemsv WHERE masv='+ req.params.MASV;

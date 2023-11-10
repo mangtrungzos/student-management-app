@@ -1,31 +1,28 @@
 const express = require('express');
 const app = express();
-const db = require('./server/controllers/db');
+const db = require('./server/controllers/connectdb');
 const cors = require('cors');
 const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
+
+// Router middleware for connecting to the server 
+const studentRouter = require('./routers/student.router');
 const scoreRouter = require('./routers/scores.router');
 const deleteRouter = require('./routers/delete.router');
-const updateRouter = require('./routers/update.router');
+const updateRouter = require('./routers/update.student.router');
 const getScoreRouter = require('./routers/scores.router');
 const updateScoreRouter = require('./routers/update.score.router');
 const deleteScoreRouter = require('./routers/delete.score.router');
 const addNewScoreRouter = require('./routers/scores.router');
 const exportExcelFileRouter = require('./routers/export.FileExcelScore.Router');
+const sendNotificationRouter = require('./routers/sendNotification.router')
+const getStudentRouter = require('./routers/student.router');
 
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
-app.use('/score', scoreRouter);
-app.use('/students/delete', deleteRouter);
-app.use('/students/update', updateRouter);
-app.use('/getScore', getScoreRouter);
-app.use('/score/update', updateScoreRouter);
-app.use('/score/delete', deleteScoreRouter)
-app.use('/score', addNewScoreRouter);
-app.use('/exportScore', exportExcelFileRouter);
 
 
 // Allow requests from any origin
@@ -37,48 +34,43 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use('/students', studentRouter);
+app.use('/getStudent', getStudentRouter);
+app.use('/score', scoreRouter);
+app.use('/students/delete', deleteRouter);
+app.use('/students/update', updateRouter);
+app.use('/getScore', getScoreRouter);
+app.use('/score/update', updateScoreRouter);
+app.use('/score/delete', deleteScoreRouter)
+app.use('/score', addNewScoreRouter);
+app.use('/exportScore', exportExcelFileRouter);
+app.use('/sendemail', sendNotificationRouter);
+
+
 // Get all students from the database
-app.get('/students', (req, res) => {
-    db.query('SELECT * FROM sinhvien', (err, result) => {
-        if(err){
-            console.log(err);
-        } else {
-            res.send(result);
-        }
-    });
-});
+
 
 // Add new students to the list of students
-app.post('/students', (req, res) => {
-    const {MASV, TENSV, DCSV, MALP} = req.body;
-    const query = "INSERT INTO sinhvien (MASV, TENSV, DCSV, MALP) VALUES (?, ?, ?, ?)"
-    
-    db.query(query,[MASV, TENSV, DCSV, MALP], (error, results) => {
-        if (error) throw error
-        res.send('Student added successfully' + results.insertId);
-    });
-});
 
+// // Search students 
+// app.get('/getStudent/:MASV', (req, res) => {
+//     const masv = req.params.MASV;
+//     const query = "SELECT * FROM sinhvien WHERE MASV=?"
+//     db.query(query,[masv], (err, result) => {
+//       if (err) {
+//         console.error('Error querying:' + err.message);
+//         res.status(500).send({err: 'Database query error'});
+//         return;
+//       }
 
-// Search students 
-app.get('/getStudent/:MASV', (req, res) => {
-    const masv = req.params.MASV;
-    const query = "SELECT * FROM sinhvien WHERE MASV=?"
-    db.query(query,[masv], (err, result) => {
-      if (err) {
-        console.error('Error querying:' + err.message);
-        res.status(500).send({err: 'Database query error'});
-        return;
-      }
-
-      if (result.length > 0) {
-        const student = result[0];
-        res.json(student);
-      } else {
-        res.status(404).json({error: 'Not found'});
-      }
-    });
-});
+//       if (result.length > 0) {
+//         const student = result[0];
+//         res.json(student);
+//       } else {
+//         res.status(404).json({error: 'Not found'});
+//       }
+//     });
+// });
 
 // Get scores
 

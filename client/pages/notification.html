@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="../public/css/student.css">
+    <link rel="stylesheet" href="/student-management-app/client/public/css/student.css">
     <title>Student Management</title>
 </head>
 <body>
@@ -45,8 +45,8 @@
         <div class="contain">
             <div class="sidebar" >
                 <div class="logo">
-                    <!-- <a href="#" class="navbar-brand">UTH University</a> -->
                     <img src="../public/images/U.png" alt="" width="110px" height="110px">
+                    <!-- <a href="#" class="navbar-brand">UTH University</a> -->
                 </div>
                 <ul class="menu">
                     <li>
@@ -59,12 +59,11 @@
                         <a href="#" class="student-list" onclick="showHideStudent()">
                             <img src="../public/images/user.png" alt="" width="20px" height="20px">
                             <span>Student</span>
-                            <!-- <i class="fa-solid fa-caret-down icon-down"></i> -->
                             <img class="icon-down" src="../public/images/down-arrow.png" alt="" width="20px" height="20px">
                         </a>
                         <ul class="student--list">
-                            <li><a href="#" class="mrg-top">Student list</a></li>
-                            <li><a href="../pages/studentadd.html">Studen add</a></li>
+                            <li><a href="../pages/studentList.html" class="mrg-top">Student list</a></li>
+                            <li><a href="./studentadd.html">Studen add</a></li>
                             <li><a href="./studentScore.html">Student scores</a></li>
                         </ul>
                     </li>
@@ -75,13 +74,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="./notification.html">
+                        <a href="#">
                             <img src="../public/images/notification.png" alt="" width="20px" height="20px">
                             <span>Notify</span>
                         </a>
                     </li>
                     <li class="logout" id="logout">
-                        <a href="./login.html">
+                        <a href="../pages/login.html">
                             <img src="../public/images/log-out.png" alt="" width="20px" height="20px">
                             <span>Logout</span>
                         </a>
@@ -89,38 +88,32 @@
                 </ul>
             </div>
             <div class="main--content">
-                <ol class="title--contain">
-                    <li><a href="">Students</a></li>
-                    <li class="active-clr">/ Students List</li>
-                </ol>
                 <div class="user--container">
-                    <h2 class="main--title">Students List</h2>
-                    <div class="user--wrapperl">
-                        <div class="addstudent--new">
-                            
-                        </div>
-                        <div class="studentlist">
-                            <table class="table-head" id="student-table">
-                                <tr>
-                                    <th class="border-left">Student Code</th>
-                                    <th class="border-left">Name</th>
-                                    <th class="border-left">class</th>
-                                    <th class="border-left">Address</th>
-                                </tr>
-                            </table>
-                            <div id="loading"></div>
-                            <table id="tableBody" class="table-body"></table>
+                    <ol class="title--contain">
+                        <li><a href="./home.html">Students</a></li>
+                        <li class="active-clr">/ Notification</li>
+                    </ol>
+                    <h2 class="main--title">Send Notification</h2>
+                    <div class="user--wrapper">
+                        <div class="add--student">
+                            <div class="send-notification">
+                                <form id="notification" action="/sendNotify" method="POST">
+                                    <label for="email">Người nhận:</label>
+                                    <input type="email" id="email" name="email" required>
+                                    <label for="message">Nội Dung:</label>
+                                    <textarea id="message" name="message" rows="4" required></textarea>                                
+                                    <button id="send-notification" type="button">Gửi</button>
+                                  </form>
+                                  <div class="notificationArea"></div>
+                            </div>
                         </div>
                     </div>
-                   
                 </div>
             </div>
         </div>
     </div>
-    <script src="/student-management-app/server/controllers/handleClick.js"></script>
-    <script src="/student-management-app/server.js"></script>
-    <script src="/student-management-app/server/controllers/student.js"></script>
-    <script src="../../server/controllers/editStudent.js"></script>
-    <script src="../../server/controllers/deleteStudent.js"></script>
+
 </body>
+<script src="/student-management-app/server/controllers/handleClick.js"></script>
+<script src="../../server/controllers/sendNotify.js"></script>
 </html>

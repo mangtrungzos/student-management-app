@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../server/controllers/db');
+const db = require('../server/controllers/connectdb');
 
 // Process request to display scores
 router.get('/', (req, res) => {

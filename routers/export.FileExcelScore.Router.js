@@ -1,5 +1,5 @@
 const express = require('express');
-const db = require('../server/controllers/db');
+const db = require('../server/controllers/connectdb');
 const router = express.Router();
 const excel = require('exceljs');
 

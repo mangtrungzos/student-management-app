@@ -9,6 +9,15 @@
     font-family: 'montserrat', sans-serif;
 }
 
+#message{
+    width: 440px;
+    box-shadow: 0 0px 10px 0px #c4c9d0;
+    height: 100px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
 :root{
     --blue: rgb(80,70,229);
     --black: rgb(255,255,255);
@@ -340,11 +349,10 @@
 
 .user--header{
     background: #fff;
+    padding: 15px;
 }
 
 .user--container{
-    background-color: #ffffff;
-    padding: 2rem 2rem 4.2rem 2rem;
     margin: 20px 20px 0 20px;
     border-radius: 4px;
 }
@@ -399,7 +407,6 @@
     border-radius: 5px;
     border: 1px solid #f2f2f7;
     box-shadow: 0 0px 10px 0px #c4c9d0;
-    /* box-shadow: 0 1px 1px rgb(56, 59, 61, .05); */
     padding: 10px;
     width: 440px;
     font-size: 1.1rem;
@@ -416,6 +423,34 @@
     box-shadow: 0 0px 10px 0px #c4c9d0;
 
 }
+
+.send-notification{
+    box-shadow: 0 0px 15px 0px #c4c9d0;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.send-notification input{
+    margin-top: 10px !important;
+    border-radius: 5px;
+    border: 1px solid #f2f2f7;
+    box-shadow: 0 0px 10px 0px #c4c9d0;
+    padding: 10px;
+    width: 440px;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #001528;
+}
+
+.send-notification:hover{
+    cursor: pointer;
+}
+
+.send-notification button{
+    box-shadow: 0 0px 10px 0px #c4c9d0;
+}
+
+
 
 .main--header{
     color: #3891e8;
@@ -531,6 +566,7 @@
     border-bottom: 2px solid #f2f2f7;
     box-shadow: 0 0px 10px 0px #c4c9d0;
     width: 100%;
+    background-color: #fff;
 }   
 
 .table-head tr{
@@ -603,12 +639,22 @@
 }
 
 .table-body tr{
-    border-bottom: 1px solid #b8bdc2;
-    box-shadow: 0 0 1.25rem rgba(31,45,61,.08);
+    box-shadow: 0 0 15px rgb(72,72,72);
+}
+
+.table-body tr:last-child{
+    margin-bottom: 10px;
 }
 
 .table-body button{
     cursor: pointer;
+}
+
+.scoreOptions{
+    display: grid;
+    grid-template-columns: auto auto;
+    place-items: start;
+    width: 400px;
 }
 
 
