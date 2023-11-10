@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../public/css/login.css">
+    <title>Student Management</title>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="form-container sign-up">
+                <form id="login-form" action="/login" method="POST">
+                    <h1>Student Management</h1>
+                    <h2>Sign in</h2>
+                    <input id="username" type="text" placeholder="Teacher Code">
+                    <input id="password" type="password" placeholder="Password">
+                    <button type="submit" onclick="login()">sign in</button>
+                </form>
+                <!-- <form id="login-form" action="/register" method="POST">
+                    <h1>Student Management</h1>
+                    <h2>Sign in</h2>
+                    <input id="username" type="text" placeholder="Teacher Code">
+                    <input id="password" type="password" placeholder="Password">
+                    <button type="submit" onclick="login()">sign up</button>
+                </form> -->
+            </div>
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-right">
+                        <h2>Welcome!</h2>
+                        <p>UTH UNIVERSITY</p>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+
+    <script src="/student-management-app/server/controllers/handleClick.js"></script>
+    <script src="/student-management-app/server/controllers/login.js"></script>
+</body>
+</html>

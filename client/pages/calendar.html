@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../public/css/home.css">
+    <title>Student Management</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <!-- <span>Student</span> -->
+                <h2>Student Management</h2>
+            </div>
+            <div class="user--info">
+                <div class="search--box">
+                    <i class="fa solid fa-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+                <a href="#" class="dropdown-toggle" >
+                    <div class="account" onclick="showHideDropMenu()">
+                        <img src="../public/images/account.jpg" alt="">
+                        <span class="user-name">Mangtrungzos</span>
+                    </div>
+                    <div class="dropdown-menu ">
+                        <a href="#" class="dropdown-item"><i class="fas fa-user-alt mr-1"></i>Profile</a>
+                        <a href="#" class="dropdown-item"><i class="fas fa-cog mr-1"></i>Setting</a>
+                        <a href="../pages/login.html" class="dropdown-item"><i class="fas fa-sign-out-alt mr-1"></i>Logout</a>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!--------- Content --------->
+        <div id="contain" class="contain">
+            <div class="sidebar">
+                <div class="logo">
+                    <a href="#" class="navbar-brand">UTH University</a>
+                </div>
+                <ul class="menu">
+                    <li class="active">
+                        <a href="../pages/home.html">
+                            <i class="fas fa-home-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="menu-student pding-4">
+                        <a class="student-list" href="#" onclick="showHideStudent()">
+                            <i class="fas fa-user"></i>
+                            <span>Student</span>
+                            <i class="fa-solid fa-caret-down icon-down"></i>
+                        </a>
+                        <ul class="student--list">
+                            <li><a class="mrg-top" href="../pages/studentList.html">Student List</a></li>
+                            <li><a href="../pages/studentadd.html">Student add</a></li>
+                            <li><a href="#">Student scores</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Calendar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-bell"></i>
+                            <span>Notify</span>
+                        </a>
+                    </li>
+                    <li class="logout">
+                        <a href="../pages/login.html">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="main--content">
+                <div class="card--container">
+                    <ol class="title--contain">
+                        <li><a href="../pages/home.html">Home</a></li>
+                        <li class="active--clr">/ Calendar</li>
+                    </ol>
+                    <h3 class="main--title">Calendar</h3>
+                    <div class="card border-left-3">
+                        <div class="card--list">
+                            <div class="card--list1">
+                                <a href="../pages/home.html"><img src="../pages/images/dash.png" alt="">Home</a>
+                            </div>
+                            <div class="card--list2">
+                               <span class="card__management">Calendar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="/student-management-app/server/controllers/handleClick.js"></script>
+<script src="/student-management-app/controllers/button.js"></script>
+</body>
+</html>
