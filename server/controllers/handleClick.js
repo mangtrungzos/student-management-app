@@ -14,9 +14,9 @@ if (studentList) {
     }
 }
 
-studentList.onclick = () => {
-    this.style.backgroundColor = '#5046e5';
-}
+// studentList.onclick = () => {
+//     this.style.backgroundColor = '#5046e5';
+// }
 
 const dropdownMenu = document.querySelector('.dropdown-menu');
 

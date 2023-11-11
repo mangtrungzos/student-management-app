@@ -17,6 +17,8 @@ const addNewScoreRouter = require('./routers/scores.router');
 const exportExcelFileRouter = require('./routers/export.FileExcelScore.Router');
 const sendNotificationRouter = require('./routers/sendNotification.router')
 const getStudentRouter = require('./routers/student.router');
+const authenLoginRouter = require('./routers/authen.login.router')
+
 
 app.use(cors());
 app.use(express.json());
@@ -53,24 +55,6 @@ app.use('/sendemail', sendNotificationRouter);
 // Add new students to the list of students
 
 // // Search students 
-// app.get('/getStudent/:MASV', (req, res) => {
-//     const masv = req.params.MASV;
-//     const query = "SELECT * FROM sinhvien WHERE MASV=?"
-//     db.query(query,[masv], (err, result) => {
-//       if (err) {
-//         console.error('Error querying:' + err.message);
-//         res.status(500).send({err: 'Database query error'});
-//         return;
-//       }
-
-//       if (result.length > 0) {
-//         const student = result[0];
-//         res.json(student);
-//       } else {
-//         res.status(404).json({error: 'Not found'});
-//       }
-//     });
-// });
 
 // Get scores
 
@@ -78,25 +62,9 @@ app.use('/sendemail', sendNotificationRouter);
 // -------------------- Login ---------------- //
 
 // Process login request
-app.post('/login', (req, res) => {
-    const username = req.body.username;
-    const password = req.body.password;
+app.use('/authenlogin', authenLoginRouter);
 
-    // Check login infor
-    
-    // Rediredct or return error message
 
-});
-
-// Process register request
-app.post('/register', (req, res) => {
-    const {username, password, email} = req.body;
-
-    // Save registration information in database
-
-    // Redirect or return error message
-
-});
 
 
 // Process requests to delete students

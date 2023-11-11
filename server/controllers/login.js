@@ -3,13 +3,28 @@ const loginForm = document.getElementById('login-form');
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const userCode = document.getElementById('username').value;
-    const passwd = document.getElementById('password').value;
-    if (userCode === '2051150186' && passwd === '30122002') {
+    const name = document.getElementById('name').value;
+    const password = document.getElementById('password').value;
+    const data = {
+        "name": name,
+        "password": password
+    };
+
+    fetch('http://localhost:3000/authenlogin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        } return response.json();
+    })
+    .then(result => {
+        console.log(result);
         window.location.href = "/student-management-app/client/pages/home.html";
-    } else{
-        alert('Username or Password is not correct!');
-    }
+    })
+    .catch(error => console.error('Failed:', error));
 
 })
 
