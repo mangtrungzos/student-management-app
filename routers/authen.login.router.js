@@ -5,7 +5,19 @@ const db = require('../server/controllers/connectdb');
 
 router.post('/', async (req, res) => {
     try {
-        const result = await db.query("SELECT * FROM users WHERE name = ?", [req.body.name]);
+        // Save hashedPassword to the database
+        const hashedPassword = await bcrypt.hash(req.body.password, 10);
+
+        const result = await new Promise((resolve, reject) => {
+            db.query('SELECT * FROM users WHERE name = ?', [req.body.name, hashedPassword], (err, result) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(result);
+                }
+            });
+        });
+        
         console.log('Query result:', result);
 
         const rows = result && result.length > 0 ? result[0] : [];  
@@ -16,9 +28,9 @@ router.post('/', async (req, res) => {
         const user = rows[0];
 
         if (user && user.password && (await bcrypt.compare(req.body.password, user.password))) {
-            res.redirect('../client/pages/home.html')
+            res.json({ message: 'Success'});
         } else {
-            res.send('Not allow');
+            res.json({ message: 'Error' });
         }
     } catch(error) {
         console.error(error);

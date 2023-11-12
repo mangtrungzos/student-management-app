@@ -442,7 +442,7 @@
     color: #001528;
 }
 
-.send-notification:hover{
+#send-notification:hover{
     cursor: pointer;
 }
 

@@ -17,8 +17,11 @@
             </div>
             <div class="user--info">
                 <div class="search--box">
-                    <i class="fa solid fa-search"></i>
-                    <input type="text" placeholder="Search">
+                    <button type="submit">
+                        <i class="fa solid fa-search"></i>
+                        <input type="text" id="keyword" name="keyword" placeholder="Search" required>
+                    </button>
+                    <div id="resultContainer"></div>
                 </div>
                 <a href="#" class="dropdown-toggle" >
                     <div class="account" onclick="showHideDropMenu()">
@@ -70,12 +73,6 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="../pages/calendar.html">
-                            <img src="../public/images/calendar.png" alt="" width="20px" height="20px">
-                            <span>Calendar</span>
-                        </a>
-                    </li>
-                    <li>
                         <a href="./notification.html">
                             <img src="../public/images/notification.png" alt="" width="20px" height="20px">
                             <span>Notify</span>
@@ -111,11 +108,12 @@
                             <div class="payment--card ">
                                 <div class="payment__card">
                                     <div class="card--header">
-                                        <i class="fas fa-user-graduate icon"></i>
+                                        <!-- <i class="fas fa-user-graduate icon"></i> -->
+                                        <img src="../public/images/graduated.png" alt="" width="60px" height="60px">
                                     </div>
                                     <div class="amount">
                                         <span class="amount--value">
-                                            50000
+                                            8000
                                         </span>
                                         <span class="title">
                                             Students
@@ -131,7 +129,8 @@
                             <div class="payment--card">
                                 <div class="payment__card">
                                     <div class="card--header">
-                                        <i class="fas fa-crown icon"></i>
+                                        <!-- <i class="fas fa-crown icon"></i> -->
+                                        <img src="../public/images/trophy.png" alt="" width="60px" height="60px">
                                     </div>
                                     <div class="amount">
                                         <span class="amount--value">
@@ -151,14 +150,15 @@
                             <div class="payment--card ">
                                 <div class="payment__card">
                                     <div class="card--header">
-                                        <i class="fas fa-house icon"></i>
+                                        <!-- <i class="fas fa-house icon"></i> -->
+                                        <img src="../public/images/presentation.png" alt="" width="60px" height="60px">
                                     </div>
                                     <div class="amount">
                                         <span class="amount--value">
-                                            12000
+                                            1200
                                         </span>
                                         <span class="title">
-                                            Master
+                                            Lectures
                                         </span>
                                     </div>
                                 </div>
@@ -170,39 +170,12 @@
             
                         </div>
                         <div class="payment--card_col2">
-                            <div class="logout-dashboard">
-                                <a href="../pages/login.html" class="logout--link">
-                                    <div class="logout-icon">
-                                        <img src="../public/images/logout.png" alt="" width="33px" height="33px">
-                                    </div>
-                                    <div class="logout--dashboard_sign">
-                                        <span class="logout--span">Log out</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- <div class="mess">
-                                <a href="../pages/login.html" class="mess--link">
-                                    <div class="mess-icon">
-                                        <img src="../public/images/messenger.png" alt="" width="33px" height="33px">
-                                    </div>
-                                    <div class="mess--dashboard">
-                                        <span class="mess--span">Messenger</span>
-                                    </div>
-                                </a>
-                            </div> -->
                         </div>
                         <div class="payment--card_col3">
                             <span class="follow">
-                                Tracking and Statistics Utility
+                                Tracking Utility
                             </span>
                             <div class="tracking">
-                                <div class="fl-dashboard">
-                                    <a href=""></a>
-                                    <img src="../public/images/followers.png" alt="" width="40px" height="40px">
-                                    <div class="fl--dashboard">
-                                        <span class="fl--span">Tracking table</span>
-                                    </div>
-                                </div>
                                 <div class="scores-dashboard">
                                     <a href="../pages/studentScore.html">
                                         <img src="../public/images/score.png" alt="" width="40px" height="40px">
@@ -211,11 +184,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="statistics-dashboard">
-                                    <img src="../public/images/training.png" alt="" width="40px" height="40px">
-                                    <div class="statistics--dashboard">
-                                        <span class="statistics--span">Statistics table</span>
-                                    </div>
+                                <div class="scores-dashboard">
+                                    <a href="../pages/studentList.html">
+                                        <img src="../public/images/student.png" alt="" width="40px" height="40px">
+                                        <div class="scores--dashboard">
+                                            <span class="scores--span">Scores table</span>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>

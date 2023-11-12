@@ -22,7 +22,12 @@ loginForm.addEventListener('submit', (e) => {
     })
     .then(result => {
         console.log(result);
-        window.location.href = "/student-management-app/client/pages/home.html";
+        // if (result.success) {
+        //     window.location.href = "../../client/pages/home.html";
+        // } else {
+        //     alert('Login failed')
+        // }
+        window.location.href = "../../client/pages/home.html";
     })
     .catch(error => console.error('Failed:', error));
 

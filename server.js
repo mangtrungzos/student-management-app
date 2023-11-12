@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 // Router middleware for connecting to the server 
 const studentRouter = require('./routers/student.router');
 const scoreRouter = require('./routers/scores.router');
-const deleteRouter = require('./routers/delete.router');
+const deleteRouter = require('./routers/delete.student.router');
 const updateRouter = require('./routers/update.student.router');
 const getScoreRouter = require('./routers/scores.router');
 const updateScoreRouter = require('./routers/update.score.router');
