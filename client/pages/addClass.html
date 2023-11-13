@@ -74,7 +74,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="./subject.html">
+                            <img src="../public/images/elearning1.png" alt="" width="20px" height="20px">
+                            <span>Subject</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./notification.html">
                             <img src="../public/images/notification.png" alt="" width="20px" height="20px">
                             <span>Notify</span>
                         </a>
@@ -97,7 +103,7 @@
                     <div class="user--wrapper">
                         <div class="add--student">
                             <div class="user--header">
-                                <form id="studentform" action="/class" method="POST">
+                                <form id="studentform" action="/class/update" method="POST">
                                     <h2 class="main--header">Student Management</h2>
                                     <input type="text"id="MALP" name="MALP" placeholder="Mã Lớp" required>
                                     <input type="text"id="TENLP" name="TENLP" placeholder="Tên Lớp" required>
@@ -117,4 +123,9 @@
 <script src="/student-management-app/server/controllers/handleClick.js"></script>
 <script src="/student-management-app/server/controllers/addClass.js"></script>
 <script src="/student-management-app/server/server.js"></script>
+<script>
+    function back() {
+        window.location.href = '../../client/pages/class.html';
+    }
+</script>
 </html>

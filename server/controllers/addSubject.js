@@ -1,19 +1,17 @@
 document.getElementById('studentform').addEventListener("submit", (e) => {
     e.preventDefault(); // Prevent form default behavior
 
-    const masv = document.getElementById('MASV').value;
-    const tensv = document.getElementById('TENSV').value;
-    const dcsv = document.getElementById('DCSV').value;
-    const malp = document.getElementById('MALP').value;
+    const mamh = document.getElementById('MAMH').value;
+    const tenmh = document.getElementById('TENMH').value;
+    const sotc = document.getElementById('SOTC').value;
 
     const data = {
-        "MASV": masv,
-        "TENSV": tensv,
-        "DCSV": dcsv,
-        "MALP": malp,
+        "MAMH": mamh,
+        "TENMH": tenmh,
+        "SOTC": sotc,
     };
 
-    fetch('http://localhost:3000/students', {    
+    fetch('http://localhost:3000/subjects', {    
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)

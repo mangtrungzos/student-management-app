@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="/student-management-app/client/public/css/student.css">
+    <link rel="stylesheet" href="../public/css/student.css">
     <title>Student Management</title>
 </head>
 <body>
@@ -33,7 +33,7 @@
                             <img src="../public/images/settings.png" alt="" class="imgs">
                             Setting
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="../pages/login.html" class="dropdown-item">
                             <img src="../public/images/log-out.png" alt="" class="imgs">
                             Logout
                         </a>
@@ -45,8 +45,8 @@
         <div class="contain">
             <div class="sidebar" >
                 <div class="logo">
-                    <img src="../public/images/U.png" alt="" width="110px" height="110px">
                     <!-- <a href="#" class="navbar-brand">UTH University</a> -->
+                    <img src="../public/images/U.png" alt="" width="110px" height="110px">
                 </div>
                 <ul class="menu">
                     <li>
@@ -62,8 +62,8 @@
                             <img class="icon-down" src="../public/images/down-arrow.png" alt="" width="20px" height="20px">
                         </a>
                         <ul class="student--list">
-                            <li><a href="../pages/studentList.html" class="mrg-top">Student list</a></li>
-                            <!-- <li><a href="./studentadd.html">Studen add</a></li> -->
+                            <li><a href="./studentList.html" class="mrg-top">Student list</a></li>
+                            <!-- <li><a href="../pages/studentadd.html">Studen add</a></li> -->
                             <li><a href="./studentScore.html">Student scores</a></li>
                         </ul>
                     </li>
@@ -94,33 +94,39 @@
                 </ul>
             </div>
             <div class="main--content">
+                <ol class="title--contain">
+                    <li><a href="">Students</a></li>
+                    <li class="active-clr">/ List Subject</li>
+                </ol>
                 <div class="user--container">
-                    <ol class="title--contain">
-                        <li><a href="">Students</a></li>
-                        <li class="active-clr">/ Add Score</li>
-                    </ol>
-                    <h2 class="main--title">Add Score</h2>
-                    <div class="user--wrapper">
-                        <div class="add--student">
-                            <div class="user--header">
-                                <form id="studentform" action="/score" method="POST">
-                                    <h2 class="main--header">Student Management</h2>
-                                    <input type="text"id="MASV" name="MASV" placeholder="Mã Sinh Viên" required>
-                                    <input type="text"id="MAMH" name="MAMH" placeholder="Mã Môn Học" required>
-                                    <input type="text"id="DIEM" name="DIEM" placeholder="Điểm" required>
-                                    <button type="submit" value="submit">Add</button>
-                                    <button onclick="back()">Back</button>
-                                </form>
+                    <h2 class="main--title">List Subject</h2>
+                    <div class="user--wrapperl">
+                        <div class="addstudent--new">
+                            
+                        </div>
+                        <div class="subjectlist">
+                            <div class="scoreOptions">
+                                <button id="addstudent" onclick="addSubject()">Add Subject</button>
                             </div>
+                            <table class="table-head" id="student-table">
+                                <tr>
+                                    <th class="border-left">Mã Môn Học</th>
+                                    <th class="border-left">Tên Môn Học</th>
+                                    <th class="border-left">Số TC</th>
+                                </tr>
+                            </table>
+                            <div id="loading"></div>
+                            <table id="tableBody" class="table-body"></table>
                         </div>
                     </div>
+                   
                 </div>
             </div>
         </div>
     </div>
-
+    <script src="/student-management-app/server/controllers/handleClick.js"></script>
+    <script src="/student-management-app/server/controllers/subject.js"></script>
+    <script src="../../server/controllers/editSubject.js"></script>
+    <script src="../../server/controllers/deleteSubject.js"></script>
 </body>
-<script src="/student-management-app/server/controllers/handleClick.js"></script>
-<script src="/student-management-app/server/controllers/addScore.js"></script>
-<script src="/student-management-app/server/server.js"></script>
 </html>

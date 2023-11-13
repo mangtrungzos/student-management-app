@@ -73,7 +73,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="./subject.html">
+                            <img src="../public/images/elearning1.png" alt="" width="20px" height="20px">
+                            <span>Subject</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./notification.html">
                             <img src="../public/images/notification.png" alt="" width="20px" height="20px">
                             <span>Notify</span>
                         </a>
@@ -100,8 +106,8 @@
                                     <h2 class="main--header">Update Student Management</h2>
                                     <input type="text"id="MASV" name="MASV" placeholder="Mã Sinh Viên" required>
                                     <input type="text"id="TENSV" name="TENSV" placeholder="Tên Sinh Viên" required>
-                                    <input type="text"id="DCSV" name="DCSV" placeholder="Địa Chỉ Sinh Viên" required>
-                                    <input type="text"id="MALP" name="MALP" placeholder="Mã Lớp" required>
+                                    <input type="text"id="DCSV" name="DCSV" placeholder="Địa Chỉ Sinh Viên" required>
+                                    <input type="text"id="MALP" name="MALP" placeholder="Mã Lớp" required>
                                     <button type="submit" value="submit">Save</button>
                                     <button onclick="back()">Back</button>
                                 </form>
@@ -118,4 +124,10 @@
     <script src="../../server/controllers/editStudent.js"></script>
     <script src="../../server/controllers/handleClick.js"></script>
     <script src="../../server.js"></script>
+    <script>
+        function back() {
+             window.location.href = '../../client/pages/studentList.html';
+        }
+
+    </script>
 </html>

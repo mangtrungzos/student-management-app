@@ -19,9 +19,12 @@ const getStudentRouter = require('./routers/student.router');
 const authenLoginRouter = require('./routers/authen.login.router');
 const classRouter = require('./routers/class.router');
 const getClassRouter = require('./routers/getClass.router');
-const updateClassRouter = require('./routers/class.router');
+const updateClassRouter = require('./routers/update.class.router')
 const deleteClassRouter = require('./routers/delete.class.router');
-
+const subjectRouter = require('./routers/subject.router');
+const updateSubjectRouter = require('./routers/update.subject.router');
+const deleteSubjectRouter = require('./routers/delete.subject.router');
+const getSubjectRouter = require('./routers/getSubject.router')
 
 app.use(cors());
 app.use(express.json());
@@ -41,19 +44,28 @@ app.use((req, res, next) => {
 
 app.use('/students', studentRouter);
 app.use('/getStudent', getStudentRouter);
-app.use('/score', scoreRouter);
 app.use('/students/delete', deleteRouter);
 app.use('/students/update', updateRouter);
+
+app.use('/score', scoreRouter);
 app.use('/getScore', getScoreRouter);
 app.use('/score/update', updateScoreRouter);
 app.use('/score/delete', deleteScoreRouter);
 app.use('/score', addNewScoreRouter);
+
 app.use('/exportScore', exportExcelFileRouter);
+
 app.use('/sendemail', sendNotificationRouter);
+
 app.use('/class', classRouter);
 app.use('/getClass', getClassRouter);
 app.use('/class/update', updateClassRouter);
 app.use('/class/delete', deleteClassRouter);
+
+app.use('/subjects', subjectRouter);
+app.use('/subject/update', updateSubjectRouter);
+app.use('/getSubject', getSubjectRouter);
+app.use('/subject/delete', deleteSubjectRouter);
 
 // Get all students from the database
 

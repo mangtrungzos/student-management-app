@@ -46,11 +46,10 @@
             <div class="sidebar" >
                 <div class="logo">
                     <img src="../public/images/U.png" alt="" width="110px" height="110px">
-                    <!-- <a href="#" class="navbar-brand">UTH University</a> -->
                 </div>
                 <ul class="menu">
                     <li>
-                        <a href="../pages/home.html">
+                        <a href="./home.html">
                             <img src="../public/images/dashboard.png" alt="" width="20px" height="20px">
                             <span>Dashboard</span>
                         </a>
@@ -62,7 +61,7 @@
                             <img class="icon-down" src="../public/images/down-arrow.png" alt="" width="20px" height="20px">
                         </a>
                         <ul class="student--list">
-                            <li><a href="../pages/studentList.html" class="mrg-top">Student list</a></li>
+                            <li><a href="./studentList.html" class="mrg-top">Student list</a></li>
                             <!-- <li><a href="./studentadd.html">Studen add</a></li> -->
                             <li><a href="./studentScore.html">Student scores</a></li>
                         </ul>
@@ -97,30 +96,31 @@
                 <div class="user--container">
                     <ol class="title--contain">
                         <li><a href="">Students</a></li>
-                        <li class="active-clr">/ Add Score</li>
+                        <li class="active-clr">/ Update Subject</li>
                     </ol>
-                    <h2 class="main--title">Add Score</h2>
+                    <h2 class="main--title">Update Subject</h2>
                     <div class="user--wrapper">
                         <div class="add--student">
                             <div class="user--header">
-                                <form id="studentform" action="/score" method="POST">
-                                    <h2 class="main--header">Student Management</h2>
-                                    <input type="text"id="MASV" name="MASV" placeholder="Mã Sinh Viên" required>
-                                    <input type="text"id="MAMH" name="MAMH" placeholder="Mã Môn Học" required>
-                                    <input type="text"id="DIEM" name="DIEM" placeholder="Điểm" required>
-                                    <button type="submit" value="submit">Add</button>
+                                <form id="studentform" action="/subjects/update" method="POST">
+                                    <h2 class="main--header">Update Student Management</h2>
+                                    <input type="text"id="MAMH" name="MAMH" placeholder="Mã Môn Học" required>
+                                    <input type="text"id="TENMH" name="TENMH" placeholder="Tên Môn Học" required>
+                                    <input type="text"id="SOTC" name="SOTC" placeholder="Số Tín CHỉ" required>
+                                    <button type="submit" value="submit">Save</button>
                                     <button onclick="back()">Back</button>
                                 </form>
                             </div>
                         </div>
                     </div>
+                   
                 </div>
             </div>
         </div>
     </div>
 
 </body>
-<script src="/student-management-app/server/controllers/handleClick.js"></script>
-<script src="/student-management-app/server/controllers/addScore.js"></script>
-<script src="/student-management-app/server/server.js"></script>
+    <script src="../../server/controllers/editSubject.js"></script>
+    <script src="../../server/controllers/handleClick.js"></script>
+    <script src="../../server.js"></script>
 </html>

@@ -548,7 +548,7 @@
 
 .tracking{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     margin-top: 30px;
     gap: 20px;
 }

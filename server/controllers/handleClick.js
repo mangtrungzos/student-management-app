@@ -14,9 +14,6 @@ if (studentList) {
     }
 }
 
-// studentList.onclick = () => {
-//     this.style.backgroundColor = '#5046e5';
-// }
 
 const dropdownMenu = document.querySelector('.dropdown-menu');
 
@@ -55,6 +52,11 @@ function addStudent() {
 function addClass() {
     window.location.href = '../../client/pages/addClass.html'
 }
+
+function addSubject() {
+    window.location.href = '../../client/pages/addSubject.html'
+}
+
 
 // Back page
 const backPage = document.getElementById('backpage');

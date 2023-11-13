@@ -97,17 +97,17 @@
                 <div class="user--container">
                     <ol class="title--contain">
                         <li><a href="">Students</a></li>
-                        <li class="active-clr">/ Add Score</li>
+                        <li class="active-clr">/ Add Subject</li>
                     </ol>
-                    <h2 class="main--title">Add Score</h2>
+                    <h2 class="main--title">Add Subject</h2>
                     <div class="user--wrapper">
                         <div class="add--student">
                             <div class="user--header">
-                                <form id="studentform" action="/score" method="POST">
+                                <form id="studentform" action="/subjects" method="POST">
                                     <h2 class="main--header">Student Management</h2>
-                                    <input type="text"id="MASV" name="MASV" placeholder="Mã Sinh Viên" required>
                                     <input type="text"id="MAMH" name="MAMH" placeholder="Mã Môn Học" required>
-                                    <input type="text"id="DIEM" name="DIEM" placeholder="Điểm" required>
+                                    <input type="text"id="TENMH" name="TENMH" placeholder="Tên Môn Học" required>
+                                    <input type="text"id="SOTC" name="SOTC" placeholder="số Tín Chỉ" required>
                                     <button type="submit" value="submit">Add</button>
                                     <button onclick="back()">Back</button>
                                 </form>
@@ -121,6 +121,11 @@
 
 </body>
 <script src="/student-management-app/server/controllers/handleClick.js"></script>
-<script src="/student-management-app/server/controllers/addScore.js"></script>
+<script src="/student-management-app/server/controllers/addSubject.js"></script>
 <script src="/student-management-app/server/server.js"></script>
+<script>
+    function back() {
+        window.location.href = '../../client/pages/subject.html';
+    }
+</script>
 </html>
