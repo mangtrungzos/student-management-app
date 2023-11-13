@@ -59,16 +59,20 @@
                         <a href="#" class="student-list" onclick="showHideStudent()">
                             <img src="../public/images/user.png" alt="" width="20px" height="20px">
                             <span>Student</span>
-                            <!-- <i class="fa-solid fa-caret-down icon-down"></i> -->
                             <img class="icon-down" src="../public/images/down-arrow.png" alt="" width="20px" height="20px">
                         </a>
                         <ul class="student--list">
                             <li><a href="#" class="mrg-top">Student list</a></li>
-                            <li><a href="../pages/studentadd.html">Studen add</a></li>
+                            <!-- <li><a href="../pages/studentadd.html">Studen add</a></li> -->
                             <li><a href="./studentScore.html">Student scores</a></li>
                         </ul>
                     </li>
-                    
+                    <li>
+                        <a href="./class.html">
+                            <img src="../public/images/online-class.png" alt="" width="20px" height="20px">
+                            <span>Class</span>
+                        </a>
+                    </li>
                     <li>
                         <a href="./notification.html">
                             <img src="../public/images/notification.png" alt="" width="20px" height="20px">
@@ -95,9 +99,12 @@
                             
                         </div>
                         <div class="studentlist">
+                            <div class="scoreOptions">
+                                <button id="addstudent" onclick="addStudent()">Add Students</button>
+                            </div>
                             <table class="table-head" id="student-table">
                                 <tr>
-                                    <th class="border-left">Student Code</th>
+                                    <th class="border-left">MSSV</th>
                                     <th class="border-left">Name</th>
                                     <th class="border-left">class</th>
                                     <th class="border-left">Address</th>

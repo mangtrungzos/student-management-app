@@ -48,6 +48,14 @@ addSCore.addEventListener('click', () => {
     window.location.href = "../../client/pages/addScore.html"
 })
 
+function addStudent() {
+    window.location.href = "../../client/pages/studentadd.html"
+}
+
+function addClass() {
+    window.location.href = '../../client/pages/addClass.html'
+}
+
 // Back page
 const backPage = document.getElementById('backpage');
 backPage.addEventListener('click', () => {

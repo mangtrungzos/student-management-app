@@ -348,8 +348,14 @@
 }
 
 .user--header{
-    background: #fff;
+    
     padding: 15px;
+}
+
+.add--student{
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    background: #fff;
 }
 
 .user--container{
@@ -552,6 +558,25 @@
     margin-bottom: 20px;
 }
 
+.classlist{
+    margin: 10px;
+    border: 1px solid #f2f2f7;
+    box-shadow: 0 1px 2px rgb(56, 59, 61, .05);
+    position: relative;
+    width: 1000px;
+}
+
+.classlist button{
+    box-shadow: 0 0px 10px 0px #c4c9d0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font: 15px 'montserrat', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
 #loading {
     border: 3px solid white;
     border-top-color: #f94892;
@@ -562,16 +587,24 @@
     margin: 2rem auto 0 auto;
   }
 
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
 .table-head {
-    border-bottom: 2px solid #f2f2f7;
+    color: white;
     box-shadow: 0 0px 10px 0px #c4c9d0;
     width: 100%;
-    background-color: #fff;
+    background-color: rgb(80,70,229);
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
 }   
 
 .table-head tr{
     display: grid;
-    grid-template-columns: 220px 290px 220px auto;
+    grid-template-columns: 220px 270px 200px auto;
 }
 
 .table-head tr th{
@@ -581,12 +614,13 @@
 
 .table-heads tr{
     display: grid;
-    grid-template-columns: 220px 200px 340px auto;
+    grid-template-columns: 200px 200px 340px auto;
 }
 
 
 .table-head th{
     text-align: left;
+    word-break: break-all;
     padding: 18px 18px 18px 23px;
     line-height: 1.4;
 }
@@ -623,7 +657,6 @@
     display: grid;
     align-items: center;
     grid-template-columns: 200px 300px 200px 300px 150px;
-    margin: 14px 20px 0 19px;
     font-family: 'montserrat', sans-serif;
     font-size: 1.1rem;
     padding: 15px 0 0px 5px;
@@ -638,14 +671,6 @@
     font-weight: bold;
 }
 
-.table-body tr{
-    box-shadow: 0 0 15px rgb(72,72,72);
-}
-
-.table-body tr:last-child{
-    margin-bottom: 10px;
-}
-
 .table-body button{
     cursor: pointer;
 }
@@ -657,6 +682,20 @@
     width: 400px;
 }
 
+@media (hover: hover) {
+    .table-body tr {
+      transition: 0.2s ease-in;
+      cursor: pointer;
+    }
+    .table-body tr:hover {
+      transform: scale(1.02);
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+  }
+
+.table-body tr:nth-child(2n + 2) {
+    background-color: #f6f6f6;
+}
 
 /*------ Color CSS -------*/
 .light-red {
@@ -692,5 +731,5 @@
 }
 
 .border-left{
-    border-left: 1px solid #f2f2f7;
+    /* border-left: 1px solid #f2f2f7; */
 }

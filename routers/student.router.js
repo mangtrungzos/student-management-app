@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     const {MASV, TENSV, DCSV, MALP} = req.body;
-    const query = "INSERT INTO sinhvien (MASV, TENSV, DCSV, MALP) VALUES (?, ?, ?, ?)"
+    const query = 'INSERT INTO sinhvien (MASV, TENSV, DCSV, MALP) VALUES (?, ?, ?, ?)'
     
     db.query(query,[MASV, TENSV, DCSV, MALP], (error, results) => {
         if (error) throw error
