@@ -18,9 +18,17 @@ router.post('/', (req, res) => {
     const query = 'INSERT INTO monhoc (MAMH, TENMH, SOTC) VALUES (?, ?, ?)'
     
     db.query(query,[MAMH, TENMH, SOTC], (error, results) => {
-        if (error) throw error
-        res.send('Student added successfully ' + results.insertId);
+        
+        if(error) {
+            console.error('Error when adding to subject:' + error.message);
+            res.status(500).json({error: 'Error when adding to subject'});
+        } else {
+            console.log('Data added successfully');
+            res.status(200).json({message: 'Data added successfully'});
+        }   
     });
 });
+
+
 
 module.exports = router;

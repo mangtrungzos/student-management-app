@@ -1,3 +1,8 @@
+function back() {
+    window.location.href = '../../client/pages/studentList.html';
+}
+
+
 document.getElementById('studentform').addEventListener("submit", (e) => {
     e.preventDefault(); // Prevent form default behavior
 
@@ -10,7 +15,7 @@ document.getElementById('studentform').addEventListener("submit", (e) => {
         "MASV": masv,
         "TENSV": tensv,
         "DCSV": dcsv,
-        "MALP": malp,
+        "MALP": malp
     };
 
     fetch('http://localhost:3000/students', {    

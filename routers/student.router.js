@@ -18,10 +18,18 @@ router.post('/', (req, res) => {
     const query = 'INSERT INTO sinhvien (MASV, TENSV, DCSV, MALP) VALUES (?, ?, ?, ?)'
     
     db.query(query,[MASV, TENSV, DCSV, MALP], (error, results) => {
-        if (error) throw error
-        res.send('Student added successfully' + results.insertId);
+      if(error) {
+        console.error('Error when adding to student:' + error.message);
+        res.status(500).json({error: 'Error when adding to student'});
+      } else {
+        console.log('Data added successfully');
+        res.status(200).json({message: 'Data added successfully'});
+      }  
     });
 });
+
+
+
 
 // Search students 
 router.get('/:MASV', (req, res) => {

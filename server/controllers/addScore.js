@@ -1,3 +1,7 @@
+function back() {
+    window.location.href = '../../client/pages/studentScore.html';
+}
+
 document.getElementById('studentform').addEventListener("submit", (e) => {
     e.preventDefault(); // Prevent form default behavior
 
@@ -11,7 +15,7 @@ document.getElementById('studentform').addEventListener("submit", (e) => {
         "DIEM": diem
     };
 
-    fetch('http://localhost:3000/score', {    
+    fetch('http://localhost:3000/scores', {    
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)

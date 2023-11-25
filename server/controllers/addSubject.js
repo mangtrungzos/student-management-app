@@ -1,3 +1,7 @@
+function back() {
+    window.location.href = '../../client/pages/subject.html';
+}
+
 document.getElementById('studentform').addEventListener("submit", (e) => {
     e.preventDefault(); // Prevent form default behavior
 
@@ -8,7 +12,7 @@ document.getElementById('studentform').addEventListener("submit", (e) => {
     const data = {
         "MAMH": mamh,
         "TENMH": tenmh,
-        "SOTC": sotc,
+        "SOTC": sotc
     };
 
     fetch('http://localhost:3000/subjects', {    

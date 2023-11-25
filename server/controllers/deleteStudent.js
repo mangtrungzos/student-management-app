@@ -1,4 +1,4 @@
-function deleteSubject(masv){
+function deleteStudent(masv){
         fetch(`http://localhost:3000/students/delete/${masv}`, {    
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },

@@ -16,13 +16,18 @@
             </div>
             <div class="user--info">
                 <div class="search--box">
-                    <i class="fa solid fa-search"></i>
-                    <input type="text" placeholder="Search">
+                    <button type="submit">
+                        <button id="searchBtn">
+                            <i class="fa solid fa-search"></i>
+                        </button>
+                        <input type="text" id="searchInput"  placeholder="Search" required>
+                    </button>
+                    <div id="resultContainer"></div>
                 </div>
                 <a href="#" class="dropdown-toggle" >
                     <div class="account" onclick="showHideDropMenu()">
                         <img src="../public/images/account.jpg" alt="">
-                        <span class="user-name">Mangtrungzos</span>
+                        <span class="user-name">Vũ Trọng Sang</span>
                     </div>
                     <div class="dropdown-menu">
                         <a href="#" class="dropdown-item">
@@ -51,43 +56,43 @@
                     <li>
                         <a href="./home.html">
                             <img src="../public/images/dashboard.png" alt="" width="20px" height="20px">
-                            <span>Dashboard</span>
+                            <span>Trang Chủ</span>
                         </a>
                     </li>
                     <li class="menu-student pding-4 active">
                         <a href="#" class="student-list" onclick="showHideStudent()">
                             <img src="../public/images/user.png" alt="" width="20px" height="20px">
-                            <span>Student</span>
+                            <span>Sinh Viên</span>
                             <img class="icon-down" src="../public/images/down-arrow.png" alt="" width="20px" height="20px">
                         </a>
                         <ul class="student--list">
-                            <li><a href="./studentList.html" class="mrg-top">Student list</a></li>
+                            <li><a href="./studentList.html" class="mrg-top">Danh Sách</a></li>
                             <!-- <li><a href="./studentadd.html">Studen add</a></li> -->
-                            <li><a href="./studentScore.html">Student scores</a></li>
+                            <li><a href="./studentScore.html">Điểm SV</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="./class.html">
                             <img src="../public/images/online-class.png" alt="" width="20px" height="20px">
-                            <span>Class</span>
+                            <span>Lớp</span>
                         </a>
                     </li>
                     <li>
                         <a href="./subject.html">
                             <img src="../public/images/elearning1.png" alt="" width="20px" height="20px">
-                            <span>Subject</span>
+                            <span>Môn Học</span>
                         </a>
                     </li>
                     <li>
                         <a href="./notification.html">
                             <img src="../public/images/notification.png" alt="" width="20px" height="20px">
-                            <span>Notify</span>
+                            <span>Thông Báo</span>
                         </a>
                     </li>
                     <li class="logout" id="logout">
                         <a href="../pages/login.html">
                             <img src="../public/images/log-out.png" alt="" width="20px" height="20px">
-                            <span>Logout</span>
+                            <span>Đăng Xuất</span>
                         </a>
                     </li>
                 </ul>
@@ -123,4 +128,6 @@
     <script src="../../server/controllers/editSubject.js"></script>
     <script src="../../server/controllers/handleClick.js"></script>
     <script src="../../server.js"></script>
+    <script src="../../server/controllers/searchByKey.js"></script>
+
 </html>

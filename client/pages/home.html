@@ -18,15 +18,17 @@
             <div class="user--info">
                 <div class="search--box">
                     <button type="submit">
-                        <i class="fa solid fa-search"></i>
-                        <input type="text" id="keyword" name="keyword" placeholder="Search" required>
+                        <button id="searchBtn">
+                            <i class="fa solid fa-search"></i>
+                        </button>
+                        <input type="text" id="searchInput"  placeholder="Search" required>
                     </button>
                     <div id="resultContainer"></div>
                 </div>
                 <a href="#" class="dropdown-toggle" >
                     <div class="account" onclick="showHideDropMenu()">
                         <img src="../public/images/account.jpg" alt="">
-                        <span class="user-name">Mangtrungzos</span>
+                        <span class="user-name">Vũ Trọng Sang</span>
                     </div>
                     <div class="dropdown-menu ">
                         <a href="#" class="dropdown-item">
@@ -56,42 +58,42 @@
                     <li class="active">
                         <a href="#">
                             <img src="../public/images/dashboard.png" alt="" width="20px" height="20px">
-                            <span>Dashboard</span>
+                            <span>Trang Chủ</span>
                         </a>
                     </li>
                     <li class="menu-student pding-4">
                         <a class="student-list" href="#" onclick="showHideStudent()">
                             <img src="../public/images/user.png" alt="" width="20px" height="20px">
-                            <span>Student</span>
+                            <span>Sinh Viên</span>
                             <img class="icon-down" src="../public/images/down-arrow.png" alt="" width="20px" height="20px">
                         </a>
                         <ul class="student--list ">
-                            <li><a class="mrg-top" href="../pages/studentList.html">Student List</a></li>
-                            <li><a href="./studentScore.html">Student scores</a></li>
+                            <li><a class="mrg-top" href="../pages/studentList.html">Danh Sách</a></li>
+                            <li><a href="./studentScore.html">Điểm SV</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="./class.html">
                             <img src="../public/images/online-class.png" alt="" width="20px" height="20px">
-                            <span>Class</span>
+                            <span>Lớp</span>
                         </a>
                     </li>
                     <li>
                         <a href="./subject.html">
                             <img src="../public/images/elearning1.png" alt="" width="20px" height="20px">
-                            <span>Subject</span>
+                            <span>Môn Học</span>
                         </a>
                     </li>
                     <li>
                         <a href="./notification.html">
                             <img src="../public/images/notification.png" alt="" width="20px" height="20px">
-                            <span>Notify</span>
+                            <span>THông Báo</span>
                         </a>
                     </li>
                     <li class="logout">
                         <a href="../pages/login.html">
                             <i class="fas fa-sign-out-alt"></i>
-                            <span>Logout</span>
+                            <span>Đăng Xuất</span>
                         </a>
                     </li>
                 </ul>
@@ -100,9 +102,9 @@
                 <div class="card--container">
                     <ol class="title--contain">
                         <li><a href="../pages/home.html">Home</a></li>
-                        <li class="active--clr">/ Dashboard</li>
+                        <li class="active--clr">/ Trang Chủ</li>
                     </ol>
-                    <h3 class="main--title">Dashboard</h3>
+                    <h3 class="main--title">Trang Chủ</h3>
                     <div class="card border-left-3">
                         <div class="card--list">
                             <div class="card--list1">
@@ -180,14 +182,14 @@
                         </div>
                         <div class="payment--card_col3">
                             <span class="follow">
-                                Tracking Utility
+                                Bảng Theo Dõi
                             </span>
                             <div class="tracking">
                                 <div class="scores-dashboard">
                                     <a href="../pages/studentScore.html">
                                         <img src="../public/images/score.png" alt="" width="40px" height="40px">
                                         <div class="scores--dashboard">
-                                            <span class="scores--span">Scores table</span>
+                                            <span class="scores--span">Bảng Điểm</span>
                                         </div>
                                     </a>
                                 </div>
@@ -195,7 +197,7 @@
                                     <a href="../pages/studentList.html">
                                         <img src="../public/images/student.png" alt="" width="40px" height="40px">
                                         <div class="scores--dashboard">
-                                            <span class="scores--span">Students table</span>
+                                            <span class="scores--span">Bảng SV</span>
                                         </div>
                                     </a>
                                 </div>
@@ -203,7 +205,7 @@
                                     <a href="../pages/class.html">
                                         <img src="../public/images/class.png" alt="" width="40px" height="40px">
                                         <div class="scores--dashboard">
-                                            <span class="scores--span">Class table</span>
+                                            <span class="scores--span">Bảng Lớp</span>
                                         </div>
                                     </a>
                                 </div>
@@ -211,7 +213,7 @@
                                     <a href="./subject.html">
                                         <img src="../public/images/elearning.png" alt="" width="40px" height="40px">
                                         <div class="scores--dashboard">
-                                            <span class="scores--span">Subject table</span>
+                                            <span class="scores--span">Bảng Môn Học</span>
                                         </div>
                                     </a>
                                 </div>
@@ -223,5 +225,6 @@
         </div>
     </div>
     <script src="/student-management-app/server/controllers/handleClick.js"></script>
+    <script src="../../server/controllers/searchByKey.js"></script>
 </body>
 </html>

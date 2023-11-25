@@ -63,3 +63,5 @@ const backPage = document.getElementById('backpage');
 backPage.addEventListener('click', () => {
     window.location.href = "../../client/pages/studentScore.html"
 })
+
+

@@ -16,8 +16,8 @@ router.post('/', (req, res) => {
     const { MALP, TENLP, NK } = req.body;
     const query = 'INSERT INTO lop (MALP, TENLP, NK) VALUES (?, ?, ?)';
 
-    db.query(query, [MALP, TENLP, NK], (error, results) => {
-        if(error) {
+    db.query(query, [MALP, TENLP, NK], (err, results) => {
+        if(err) {
             console.error('Error when adding to class:' + err.message);
             res.status(500).json({error: 'Error when adding to class'});
         } else {
@@ -26,6 +26,8 @@ router.post('/', (req, res) => {
         }    
     });
 });
+
+
 
 
 module.exports = router;

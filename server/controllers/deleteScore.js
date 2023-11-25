@@ -1,5 +1,5 @@
 function deleteStudent(masv){
-    fetch(`http://localhost:3000/score/delete/${masv}`, {    
+    fetch(`http://localhost:3000/scores/delete/${masv}`, {    
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
     })
