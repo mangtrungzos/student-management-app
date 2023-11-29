@@ -7,8 +7,6 @@ router.post('/', async (req, res) => {
     try {
         // Save hashedPassword to the database
         // Hashing Password
-        // const hashedPassword = await bcrypt.hash(req.body.password, 10); hashedPassword
-
         const result = await new Promise((resolve, reject) => {
             db.query('SELECT * FROM users WHERE name = ? AND password =?', [req.body.name, req.body.password, ], (err, result) => {
                 if (err) {

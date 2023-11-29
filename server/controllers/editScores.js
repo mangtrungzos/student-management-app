@@ -39,7 +39,7 @@ document.getElementById('studentform').addEventListener("submit", (e) => {
     };
 
     fetch(`http://localhost:3000/scores/update/${masv}`, {    
-        method: 'POST',
+        method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     })

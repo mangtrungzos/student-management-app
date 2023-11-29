@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../server/controllers/connectdb');
 
-router.post('/:MASV', (req, res) => {
+router.put('/:MASV', (req, res) => {
     const masv = req.params.MASV;
     const {TENSV, DCSV, MALP } = req.body;
 

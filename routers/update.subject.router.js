@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../server/controllers/connectdb');
 
-router.post('/:MAMH', (req, res) => {
+router.put('/:MAMH', (req, res) => {
     const mamh = req.params.MAMH;
     const {TENMH, SOTC } = req.body;
 

@@ -4,7 +4,6 @@ const cors = require('cors');
 const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 const path = require('path');
-// const session = require('express-session');
 
 // Router middleware for connecting to the server 
 const studentRouter = require('./routers/student.router');
@@ -34,12 +33,6 @@ const updateSubjectRouter = require('./routers/update.subject.router');
 const deleteSubjectRouter = require('./routers/delete.subject.router');
 const getSubjectRouter = require('./routers/getSubject.router')
 
-// app.use(session({
-// 	secret: 'secret',
-// 	resave: true,
-// 	saveUninitialized: true
-// }));
-
 
 app.use(cors());
 app.use(express.json());
@@ -59,12 +52,13 @@ app.use((req, res, next) => {
 });
 
 
-
+// Student
 app.use('/students', studentRouter);
 app.use('/getStudent', getStudentRouter);
 app.use('/students/delete', deleteRouter);
 app.use('/students/update', updateRouter);
 
+// Scores
 app.use('/scores', scoreRouter);
 app.use('/getScores', getScoreRouter);
 app.use('/scores/update', updateScoreRouter);
@@ -72,13 +66,16 @@ app.use('/scores/delete', deleteScoreRouter);
 
 app.use('/exportScore', exportExcelFileRouter);
 
+// Notifications
 app.use('/sendemail', sendNotificationRouter);
 
+// Class
 app.use('/class', classRouter);
 app.use('/getClass', getClassRouter);
 app.use('/class/update', updateClassRouter);
 app.use('/class/delete', deleteClassRouter);
 
+// Subjects
 app.use('/subjects', subjectRouter);
 app.use('/subject/update', updateSubjectRouter);
 app.use('/getSubject', getSubjectRouter);

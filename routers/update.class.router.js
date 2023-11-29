@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../server/controllers/connectdb');
 
-router.post('/:MALP', (req, res) => {
+router.put('/:MALP', (req, res) => {
     const malp = req.params.MALP;
     const { TENLP, NK } = req.body;
     const updateClass =  'UPDATE lop SET TENLP=?, NK=? WHERE MALP=?';

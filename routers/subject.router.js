@@ -2,7 +2,7 @@ const express = require('express');
 const db = require('../server/controllers/connectdb');
 const router = express.Router();
 
-// Get all students from the database
+// Get all subject from the database
 router.get('/', (req, res) => {
     db.query('SELECT * FROM monhoc', (err, result) => {
         if(err){
