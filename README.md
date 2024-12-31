@@ -1,3 +1,2 @@
 # student-management-app
-
-HTML/CSS Javascript
+# HTML/CSS Javascript
