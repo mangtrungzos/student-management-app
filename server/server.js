@@ -6,32 +6,32 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 // Router middleware for connecting to the server 
-const studentRouter = require('../routers/student.router');
-const deleteRouter = require('../routers/delete.student.router');
-const updateRouter = require('../routers/update.student.router');
-const getStudentRouter = require('../routers/student.router');
+const studentRouter = require('../client/routers/student.router');
+const deleteRouter = require('../client/routers/delete.student.router');
+const updateRouter = require('../client/routers/update.student.router');
+const getStudentRouter = require('../client/routers/student.router');
 
 
-const scoreRouter = require('../routers/scores.router');
-const getScoreRouter = require('../routers/getScore.router');
-const updateScoreRouter = require('../routers/update.score.router');
-const deleteScoreRouter = require('../routers/delete.score.router');
+const scoreRouter = require('../client/routers/scores.router');
+const getScoreRouter = require('../client/routers/getScore.router');
+const updateScoreRouter = require('../client/routers/update.score.router');
+const deleteScoreRouter = require('../client/routers/delete.score.router');
 // const addNewScoreRouter = require('./routers/scores.router');
-const exportExcelFileRouter = require('../routers/export.FileExcelScore.Router');
+const exportExcelFileRouter = require('../client/routers/export.FileExcelScore.Router');
 
-const sendNotificationRouter = require('../routers/sendNotification.router');
+const sendNotificationRouter = require('../client/routers/sendNotification.router');
 
-const authenLoginRouter = require('../routers/authen.login.router');
+const authenLoginRouter = require('../client/routers/authen.login.router');
 
-const classRouter = require('../routers/class.router');
-const getClassRouter = require('../routers/getClass.router');
-const updateClassRouter = require('../routers/update.class.router')
-const deleteClassRouter = require('../routers/delete.class.router');
+const classRouter = require('../client/routers/class.router');
+const getClassRouter = require('../client/routers/getClass.router');
+const updateClassRouter = require('../client/routers/update.class.router')
+const deleteClassRouter = require('../client/routers/delete.class.router');
 
-const subjectRouter = require('../routers/subject.router');
-const updateSubjectRouter = require('../routers/update.subject.router');
-const deleteSubjectRouter = require('../routers/delete.subject.router');
-const getSubjectRouter = require('../routers/getSubject.router')
+const subjectRouter = require('../client/routers/subject.router');
+const updateSubjectRouter = require('../client/routers/update.subject.router');
+const deleteSubjectRouter = require('../client/routers/delete.subject.router');
+const getSubjectRouter = require('../client/routers/getSubject.router')
 
 
 app.use(cors());
